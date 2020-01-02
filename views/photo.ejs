@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Photo Details</title>
+</head>
+<body>
+	    <div>
+	        <h1><%=photo[0].title%></h1>
+
+			<img src=" data:<%=photo[0].mimetype%>;base64, <%=photo[0].image%>" style="width:60%"><br><br>
+
+	        Title: <%=photo[0].title%></><br><br>
+	        Description: <%=photo[0].description%></><br><br>
+	        Make: <%=photo[0].make%></><br><br>
+	        Model: <%=photo[0].model%></><br><br>
+	        Date: <%=photo[0].date%></><br><br>
+		Location: <a href="/map?_id=<%= photo[0]._id%>">Map<br><br>
+	        <br>
+
+	    </div>
+
+    <br>
+    <a href=/>Home</a>
+    <br><br>
+</body>
+
+</html>

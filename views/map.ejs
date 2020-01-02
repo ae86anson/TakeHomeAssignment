@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Location of the photo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+      
+      <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+<body>
+	<div id = "map" style = "width: 900px; height: 580px"></div>
+    	<script>
+
+    	function initMap() {
+          var myLatLng = {lat: <%=photo[0].lat%>, lng: <%=photo[0].lon%>};
+	    var map = new google.maps.Map(document.getElementById('map'), {
+	        zoom: 15,
+	        center: myLatLng
+	    });
+
+	    var marker = new google.maps.Marker({
+	        position: myLatLng,
+	        map: map
+	    });
+	}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACzdU_wtJcUs2ZquXdIBlezVBWmi9XhY8&callback=initMap">
+    </script>
+
+
+    <br>
+    <a href="/display?_id=<%= photo[0]._id%>">Back</a>
+    <br><br>
+</body>
+
+</html>
